@@ -17,14 +17,22 @@
         </el-select>
       </div>
       <div class="flag-button">
-        <el-button @click="handleChart" type="warning"
+        <el-button @click="handleChart(alchol)" type="primary"
           >１週間の飲酒量表示</el-button
         >
       </div>
     </div>
     <div v-if="chartFlag" class="content">
-      <BarChart />
+      <div class="chart">
+        <BarChart />
+      </div>
     </div>
+    <el-dialog title="飲みすぎ注意" :visible.sync="disableDaialg" width="80%">
+      <span>あなたは２日連続でお酒を飲んでいます。休肝日を作りましょう。</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="disableDaialg = false">キャンセル</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -33,6 +41,7 @@ export default {
   name: "IndexPage",
   data() {
     return {
+      disableDaialg: false,
       chartFlag: false,
       alchol: "",
       options: [
@@ -56,8 +65,11 @@ export default {
     };
   },
   methods: {
-    handleChart() {
+    handleChart(alchol) {
       this.chartFlag = true;
+      if (alchol === "3合以上4合未満") {
+        this.disableDaialg = true;
+      }
     },
   },
   mounted() {},
@@ -66,8 +78,8 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  height: 700px;
-  background-color: rgb(241, 237, 237);
+  height: 750px;
+  background: -webkit-linear-gradient(left, #F89174, #FFC778);
   .question {
     margin: 10px;
     padding: 10px;
@@ -76,5 +88,11 @@ export default {
       margin-top: 30px;
     }
   }
+}
+
+.chart {
+  padding: 15px;
+  margin: 15px;
+  background-color: white;
 }
 </style>

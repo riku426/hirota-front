@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="header">
+    <div class="header-comp">
       <Header />
     </div>
     <div class="content">
@@ -10,6 +10,7 @@
         <p>
           このアプリではお酒の飲み過ぎで健康を損なわないようにするためのツールです
         </p>
+        <img src="@/img/beer.jpeg" class="beer-img">
       </div>
     </div>
   </div>
@@ -24,13 +25,23 @@ export default {
 
 <style lang="scss">
 .container {
-  height: 700px;
-  background-color: rgb(241, 237, 237);
+  height: 750px;
+  width: 100%;
+  background: -webkit-linear-gradient(left, #F89174, #FFC778);
+  .header-comp {
+    background-color: gray;
+  }
   .top {
     text-align: center;
     padding: 5px;
     .title {
-      color: orange;
+      color: rgb(3, 3, 80);
+    }
+    .beer-img {
+      padding: 0 5px;
+      width: 95%;
+      height: auto;
+      border-radius: 30px;
     }
   }
 }
