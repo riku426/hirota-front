@@ -10,7 +10,11 @@
         <p>
           このアプリではお酒の飲み過ぎで健康を損なわないようにするためのツールです
         </p>
-        <img src="@/img/beer.jpeg" class="beer-img">
+        <img src="@/img/beer.jpeg" class="beer-img" />
+        <p class="point-title">あなたのビールポイントは...</p>
+        <div class="point-box">
+          <h3 class="test">333<span>pt</span></h3>
+        </div>
       </div>
     </div>
   </div>
@@ -27,7 +31,7 @@ export default {
 .container {
   height: 750px;
   width: 100%;
-  background: -webkit-linear-gradient(left, #F89174, #FFC778);
+  background: -webkit-linear-gradient(left, #f89174, #ffc778);
   .header-comp {
     background-color: gray;
   }
@@ -43,6 +47,13 @@ export default {
       height: auto;
       border-radius: 30px;
     }
+  }
+  .point-box {
+    padding: 10px;
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    border-radius: 20px;
   }
 }
 </style>
