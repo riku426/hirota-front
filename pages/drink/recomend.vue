@@ -42,18 +42,18 @@ export default {
       beer: "",
       recomendation: "",
       beer_1: {
-        name: "エルディンガー",
+        name: "ええやんモルト",
         explanation:
-          "これはドイツ産のノンアルコールビールで、糖質脂質も抑えているビールです。bmiが高めのあなたにオススメのビールです。",
-        path: require("@/img/france-beer.jpeg"),
+          "麦芽感を全面に出したビール。ほのかに感じるフルーティーさで深いコクを演出。",
+        path: require("@/img/molt.jpeg"),
         data: {
           //データの各項目のラベル(上から時計回り)
-          labels: ["コク", "フルーティ", "味の濃さ", "苦味"],
+          labels: ["コク", "キレ", "フルーティ", "麦芽感", "苦味"],
           //データ設定
           datasets: [
             {
               //グラフのデータ(上から時計回り)
-              data: [4, 1, 2, 3],
+              data: [5, 1, 3, 5, 1],
               //グラフ全体のラベル
               label: "評価値",
               //背景色
@@ -81,18 +81,18 @@ export default {
         },
       },
       beer_2: {
-        name: "アイピーエー",
+        name: "ええやんブラック",
         explanation:
-          "これはアメリカ産のクラフトビールです。普通のビールと比べ、ホップのフルーティーな味わいと高い香り、そして、しっかりとした後味が特徴となっています。アルコール度数は5.9%です。",
-        path: require("@/img/beer2.jpeg"),
+          "上品な苦味とほのかなフルーツ感で飲み口がすっきりとしたキレのあるビール。",
+        path: require("@/img/black.jpeg"),
         data: {
           //データの各項目のラベル(上から時計回り)
-          labels: ["コク", "フルーティ", "味の濃さ", "苦味"],
+          labels: ["コク", "キレ", "フルーティ", "麦芽感", "苦味"],
           //データ設定
           datasets: [
             {
               //グラフのデータ(上から時計回り)
-              data: [1, 4, 3, 3],
+              data: [2, 4, 3, 1, 5],
               //グラフ全体のラベル
               label: "評価値",
               //背景色
@@ -120,18 +120,18 @@ export default {
         },
       },
       beer_3: {
-        name: "アサヒ",
+        name: "ええやんスライダー",
         explanation:
-          "これはアメリカ産のクラフトビールです。普通のビールと比べ、ホップのフルーティーな味わいと高い香り、そして、しっかりとした後味が特徴となっています。アルコール度数は5.9%です。",
-        path: require("@/img/beer2.jpeg"),
+          "フルーティー感を全面に出したビール。キレがあり、甘ったるさを感じさせない。",
+        path: require("@/img/slider.jpeg"),
         data: {
           //データの各項目のラベル(上から時計回り)
-          labels: ["コク", "フルーティ", "味の濃さ", "苦味"],
+          labels: ["コク", "キレ", "フルーティ", "麦芽感", "苦味"],
           //データ設定
           datasets: [
             {
               //グラフのデータ(上から時計回り)
-              data: [1, 4, 3, 3],
+              data: [2, 5, 5, 1, 1],
               //グラフ全体のラベル
               label: "評価値",
               //背景色
@@ -159,18 +159,18 @@ export default {
         },
       },
       beer_4: {
-        name: "アイピーエー",
+        name: "ええやんトロピカル",
         explanation:
-          "これはアメリカ産のクラフトビールです。普通のビールと比べ、ホップのフルーティーな味わいと高い香り、そして、しっかりとした後味が特徴となっています。アルコール度数は5.9%です。",
-        path: require("@/img/beer2.jpeg"),
+          "フルーティー感を全面に出したビール。深いコクを演出し、ビール感を感じさせない。",
+        path: require("@/img/tropical.jpeg"),
         data: {
           //データの各項目のラベル(上から時計回り)
-          labels: ["コク", "フルーティ", "味の濃さ", "苦味"],
+          labels: ["コク", "キレ", "フルーティ", "麦芽感", "苦味"],
           //データ設定
           datasets: [
             {
               //グラフのデータ(上から時計回り)
-              data: [1, 4, 3, 3],
+              data: [4, 1, 5, 1, 1],
               //グラフ全体のラベル
               label: "評価値",
               //背景色
@@ -234,18 +234,19 @@ export default {
   },
   mounted() {
     this.beer = this.$route.query.option;
-    if (this.beer == "コクがある") {
+    if (this.beer == "麦芽感が強い") {
       this.recomendation = this.beer_1;
-    } else if (this.beer === "フルーティー") {
-      this.recomendation = this.beer_2;
-    } else if (this.beer === "味が濃い") {
-      this.recomendation = this.beer_3;
     } else if (this.beer === "苦味がある") {
+      this.recomendation = this.beer_2;
+    } else if (this.beer === "キレがある") {
+      this.recomendation = this.beer_3;
+    } else if (this.beer === "フルーティ") {
       this.recomendation = this.beer_4;
+    } else if (this.beer === "コクがある") {
+      this.recomendation = this.beer_1;
     } else {
       this.visibleFlag = false;
     }
-    console.log(this.visibleFlag);
     this.handleRader();
   },
 };
@@ -285,7 +286,7 @@ export default {
   color: #555;
   font-size: 16px;
   background: white;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .balloon1-top:before {

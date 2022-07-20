@@ -5,10 +5,10 @@
     </div>
     <div class="content">
       <div class="top">
-        <h1 class="title">酒量管理アプリ</h1>
+        <h1 class="title">のんでもええやん</h1>
         <p>にようこそ</p>
         <p>
-          このアプリではお酒の飲み過ぎで健康を損なわないようにするためのツールです
+          このアプリはお酒の飲み過ぎで健康を損なわないようにするためのツールです
         </p>
         <img src="@/img/beer.jpeg" class="beer-img" />
         <p class="point-title">あなたのビールポイントは...</p>

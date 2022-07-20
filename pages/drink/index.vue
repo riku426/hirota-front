@@ -44,12 +44,16 @@ export default {
           label: "コクがある",
         },
         {
-          value: "フルーティー",
-          label: "フルーティー",
+          value: "キレがある",
+          label: "キレがある",
         },
         {
-          value: "味が濃い",
-          label: "味が濃い",
+          value: "フルーティ",
+          label: "フルーティ",
+        },
+        {
+          value: "麦芽感が強い",
+          label: "麦芽感が強い",
         },
         {
           value: "苦味がある",

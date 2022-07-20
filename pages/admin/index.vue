@@ -22,9 +22,12 @@
         >
       </div>
     </div>
-    <div v-if="chartFlag" class="content">
-      <div class="chart">
+    <div class="content">
+      <div v-if="chartFlag1" class="chart">
         <BarChart />
+      </div>
+      <div v-if="chartFlag2" class="chart">
+        <BarChart2 />
       </div>
     </div>
     <el-dialog title="飲みすぎ注意" :visible.sync="disableDaialg" width="80%">
@@ -42,9 +45,14 @@ export default {
   data() {
     return {
       disableDaialg: false,
-      chartFlag: false,
+      chartFlag1: false,
+      chartFlag2: false,
       alchol: "",
       options: [
+        {
+          value: "飲んでいない",
+          label: "飲んでいない",
+        },
         {
           value: "1合未満",
           label: "1合未満",
@@ -66,9 +74,11 @@ export default {
   },
   methods: {
     handleChart(alchol) {
-      this.chartFlag = true;
       if (alchol === "3合以上4合未満") {
+        this.chartFlag1 = true;
         this.disableDaialg = true;
+      } else {
+        this.chartFlag2 = true;
       }
     },
   },

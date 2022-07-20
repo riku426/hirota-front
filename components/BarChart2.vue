@@ -10,7 +10,7 @@ export default {
                 {
                 label: ['１週間の飲酒量'],
                 backgroundColor: '#f87979',
-                data: [1, 3, 1, 2, 0, 3, 3]
+                data: [2, 3, 0, 1, 2, 0, 0]
                 }
             ]
         },

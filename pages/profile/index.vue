@@ -24,7 +24,9 @@
       ></el-input>
     </div>
     <div class="reserve-button">
-      <el-button type="primary" class="reserve-btn">保存</el-button>
+      <el-button type="primary" class="reserve-btn" @click="handleReserve"
+        >保存</el-button
+      >
     </div>
   </div>
 </template>
@@ -39,9 +41,14 @@ export default {
       weight: "",
       blood: "",
       suger: "",
+      alertFlag: false,
     };
   },
-  methods: {},
+  methods: {
+    handleReserve() {
+      window.alert('プロフィールを保存しました')
+    },
+  },
 };
 </script>
 
